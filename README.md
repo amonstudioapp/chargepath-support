@@ -2,6 +2,10 @@
 
 無建置相依套件的 GitHub Pages 靜態網站。
 
+- 支援網址：https://amonstudioapp.github.io/chargepath-support/
+- 隱私權政策：https://amonstudioapp.github.io/chargepath-support/privacy.html
+- 儲存庫：https://github.com/amonstudioapp/chargepath-support
+
 - `index.html`：支援信箱、常見問題、問題回報資訊。
 - `privacy.html`：依 App 內隱私權政策整理，補充網站託管說明。
 - `styles.css`：共用響應式版面。
