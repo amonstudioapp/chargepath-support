@@ -78,3 +78,11 @@ Settings → Pages → Source 使用 **GitHub Actions**。`.github/workflows/pag
 本儲存庫的遠端內容是網站發布來源；App 專案中的 `docs/support-site` 為本機副本。修改前先取得遠端最新內容，避免覆蓋自動同步的新版本。
 
 App Store Connect 的 Support URL 與 Privacy Policy URL 維持原網址。支援信箱：amonstudioapp@gmail.com。聯絡連結開啟使用者郵件程式，不會自動寄信。
+
+## Facebook 與社群分享縮圖
+
+首頁、更新總覽與每個版本頁在原始 HTML head 提供完整 Open Graph 標記。共用 `assets/chargepath-share-v1.png`（1200 × 630 PNG），包含絕對 HTTPS URL、secure_url、MIME、寬高與替代文字；不依賴 JavaScript。分享標題與描述仍依各版本內容產生。`tests/test_social_metadata.py` 會檢查所有版本的標記與圖片尺寸，之後自動新增頁面也會套用同一版型。
+
+圖片來源為 `templates/share-card.html`，以 1200 × 630、CSS pixel 比例的瀏覽器截圖輸出。若更新圖片，請使用新的檔名並同步修改版型及測試，避免沿用舊圖片快取。
+
+既有網址若已被 Facebook 快取，部署後至 [Meta 分享偵錯工具](https://developers.facebook.com/tools/debug/) 輸入完整網址，點「再次抓取」，以工具中的連結預覽確認圖片。網頁 HTTP 200 只代表公開可讀，不能單獨證明 Facebook 快取已更新。
