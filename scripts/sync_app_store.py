@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import only a newly published Chargepath version from Apple's Taiwan listing."""
+"""Import only a newly published Dency version from Apple's Taiwan listing."""
 import argparse
 from datetime import datetime
 import json

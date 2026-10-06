@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build versioned Chargepath update pages using only the Python standard library."""
+"""Build versioned Dency update pages using only the Python standard library."""
 import argparse
 from datetime import date, datetime, timezone
 from email.utils import format_datetime
@@ -124,7 +124,7 @@ def render_feed(releases):
                      f'<guid isPermaLink="true">{url}</guid><pubDate>{published}</pubDate>'
                      f'<description>{escape(release["summary"])}</description></item>')
     return ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
-            '<title>電程 ChargePath 更新日誌</title>'
+            '<title>電程 Dency 更新日誌</title>'
             f'<link>{BASE_URL}/updates/</link><description>電程 App 最新功能與版本更新</description>'
             '<language>zh-TW</language>' + ''.join(items) + '</channel></rss>\n')
 

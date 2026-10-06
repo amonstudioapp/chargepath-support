@@ -1,4 +1,4 @@
-# 電程 ChargePath 支援網站
+# 電程 Dency 支援網站
 
 GitHub Pages 靜態網站。Python 3.10 以上可建置；Pillow 用於產生版本分享圖，線上瀏覽不需要 JavaScript。
 
@@ -87,7 +87,7 @@ App Store Connect 的 Support URL 與 Privacy Policy URL 維持原網址。支�
 首頁、更新總覽與每個版本頁在原始 HTML head 提供完整 Open Graph 標記，包含絕對 HTTPS URL、secure_url、MIME、寬高與替代文字，不依賴 JavaScript。所有分享圖都是 1200 × 630 PNG。
 
 - 首頁沿用 `assets/chargepath-share-v1.png` 品牌圖。
-- 版本頁使用 `assets/updates/<version>-v1.png`，呈現「電程 ChargePath」、「版本更新」與大字版本號。
+- 版本頁使用 `assets/updates/<version>-v1.png`，呈現「電程 Dency」、「版本更新」與大字版本號。
 - 更新總覽使用目前最新版本的分享圖。
 
 `scripts/build_share_cards.py` 從 releases.json 讀取版本，以 `assets/update-share-base.png` 固定品牌底圖加上數字；數字使用 Pillow 內附字型，無需系統字型。GitHub Actions 自動同步新版本時也會產生並保存圖片。相關測試驗證每版圖片連結、尺寸與建置流程。

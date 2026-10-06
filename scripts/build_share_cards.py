@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build deterministic version-number share cards from the ChargePath brand base."""
+"""Build deterministic version-number share cards from the Dency brand base."""
 import argparse
 from io import BytesIO
 import json

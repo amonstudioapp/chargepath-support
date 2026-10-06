@@ -49,7 +49,7 @@ class SocialMetadataTests(unittest.TestCase):
             "og:image:width": "1200",
             "og:image:height": "630",
             "og:image:type": "image/png",
-            "og:site_name": "電程 ChargePath",
+            "og:site_name": "電程 Dency",
             "og:locale": "zh_TW",
             "twitter:card": "summary_large_image",
         }
