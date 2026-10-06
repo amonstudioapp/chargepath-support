@@ -29,6 +29,8 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
+      - name: Install share image renderer
+        run: python3 -m pip install -r requirements.txt
       - name: Test release generation and synchronization
         run: python3 tests/run_coverage.py
       - name: Read the latest public App Store version
@@ -38,9 +40,11 @@ jobs:
         run: |
           python3 scripts/build_updates.py
           python3 scripts/build_updates.py --check
+          python3 scripts/build_share_cards.py
+          python3 scripts/build_share_cards.py --check
       - name: Save new release history
         run: |
-          git add data/releases.json updates
+          git add data/releases.json updates assets/updates
           if ! git diff --cached --quiet; then
             git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'docs: sync ChargePath version updates'
             git push origin HEAD:main

@@ -46,19 +46,23 @@ class SocialMetadataTests(unittest.TestCase):
 
     def test_static_preview_metadata_on_home_index_and_every_release(self):
         expected = {
-            "og:image": IMAGE_URL,
-            "og:image:secure_url": IMAGE_URL,
             "og:image:width": "1200",
             "og:image:height": "630",
             "og:image:type": "image/png",
             "og:site_name": "電程 ChargePath",
             "og:locale": "zh_TW",
             "twitter:card": "summary_large_image",
-            "twitter:image": IMAGE_URL,
         }
+        releases = build.validate_data(json.loads((ROOT / "data/releases.json").read_text()))
         for path, html in self.pages().items():
             with self.subTest(page=path):
                 head = HeadMetadata(html)
+                version = path.split("/")[1] if path.count("/") == 2 else releases[0]["version"]
+                image_url = IMAGE_URL if path == "index.html" else f"{build.BASE_URL}/assets/updates/{version}-v1.png"
+                for key in ("og:image", "og:image:secure_url", "twitter:image"):
+                    self.assertEqual(head.meta.get(key), [image_url])
+                if path != "index.html":
+                    self.assertIn(version, head.meta["og:image:alt"][0])
                 for key, value in expected.items():
                     self.assertEqual(head.meta.get(key), [value], f"{path}: {key}")
                 for key in ("og:title", "og:description", "og:image:alt"):

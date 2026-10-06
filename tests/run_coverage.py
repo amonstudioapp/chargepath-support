@@ -21,7 +21,7 @@ def main():
     passed = outcome.wasSuccessful()
     with tempfile.TemporaryDirectory(prefix="chargepath-coverage-") as directory:
         trace.CoverageResults(counts=counts).write_results(show_missing=True, coverdir=directory)
-        for name in ("build_updates", "sync_app_store"):
+        for name in ("build_updates", "sync_app_store", "build_share_cards"):
             lines = (Path(directory) / f"{name}.cover").read_text(encoding="utf-8").splitlines()
             covered = sum(line[:7].strip().rstrip(":").isdigit() for line in lines)
             missed = sum(line.startswith(">>>>>>") for line in lines)

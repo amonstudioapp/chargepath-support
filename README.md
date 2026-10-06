@@ -1,6 +1,6 @@
 # 電程 ChargePath 支援網站
 
-無第三方建置套件的 GitHub Pages 靜態網站。Python 3.9 以上可建置；線上瀏覽不需要 JavaScript。
+GitHub Pages 靜態網站。Python 3.10 以上可建置；Pillow 用於產生版本分享圖，線上瀏覽不需要 JavaScript。
 
 - [支援中心](https://amonstudioapp.github.io/chargepath-support/)
 - [版本更新總覽](https://amonstudioapp.github.io/chargepath-support/updates/)
@@ -61,15 +61,18 @@ App Store Lookup 只提供當下最新版本。若兩次檢查之間連續發布
 以上為格式範例，不是已發布版本。`highlights` 與 `sourceNote` 可省略；`source` 可用 `app-store` 或 `editorial`；不要貼入 HTML。版本接受 1–3 組整數（如 `2`、`2.1`、`2.1.0`），同義版本不可重複。發布日期以台灣日期填寫。
 
 ```sh
+python3 -m pip install -r requirements.txt
+python3 scripts/build_share_cards.py
 python3 tests/run_coverage.py
 python3 scripts/build_updates.py
 python3 scripts/build_updates.py --check
+python3 scripts/build_share_cards.py --check
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
 開啟 `http://127.0.0.1:8765/updates/`。推送內容至 `main` 後會自動重新建置及部署。**不要直接編輯 `updates/` 內產生的 HTML**；它們會由版型和資料重建。移除錯誤版本時，建置只清理已標記為自動產生的舊版頁，保留手動檔案。
 
-測試包括單元／整合測試與每個 Python 模組至少 80% 行覆蓋率檢查，無額外套件需要安裝。首次發布亦已驗證桌面、390px 與 320px 的瀏覽器導覽與無橫向溢位。
+測試包括單元／整合測試與每個 Python 模組至少 80% 行覆蓋率檢查。請先安裝 requirements.txt 的建置依賴。首次發布亦已驗證桌面、390px 與 320px 的瀏覽器導覽與無橫向溢位。
 
 ## GitHub Pages 部署
 
@@ -81,8 +84,14 @@ App Store Connect 的 Support URL 與 Privacy Policy URL 維持原網址。支�
 
 ## Facebook 與社群分享縮圖
 
-首頁、更新總覽與每個版本頁在原始 HTML head 提供完整 Open Graph 標記。共用 `assets/chargepath-share-v1.png`（1200 × 630 PNG），包含絕對 HTTPS URL、secure_url、MIME、寬高與替代文字；不依賴 JavaScript。分享標題與描述仍依各版本內容產生。`tests/test_social_metadata.py` 會檢查所有版本的標記與圖片尺寸，之後自動新增頁面也會套用同一版型。
+首頁、更新總覽與每個版本頁在原始 HTML head 提供完整 Open Graph 標記，包含絕對 HTTPS URL、secure_url、MIME、寬高與替代文字，不依賴 JavaScript。所有分享圖都是 1200 × 630 PNG。
 
-圖片來源為 `templates/share-card.html`，以 1200 × 630、CSS pixel 比例的瀏覽器截圖輸出。若更新圖片，請使用新的檔名並同步修改版型及測試，避免沿用舊圖片快取。
+- 首頁沿用 `assets/chargepath-share-v1.png` 品牌圖。
+- 版本頁使用 `assets/updates/<version>-v1.png`，呈現「電程 ChargePath」、「版本更新」與大字版本號。
+- 更新總覽使用目前最新版本的分享圖。
+
+`scripts/build_share_cards.py` 從 releases.json 讀取版本，以 `assets/update-share-base.png` 固定品牌底圖加上數字；數字使用 Pillow 內附字型，無需系統字型。GitHub Actions 自動同步新版本時也會產生並保存圖片。相關測試驗證每版圖片連結、尺寸與建置流程。
+
+首頁品牌圖來源為 `templates/share-card.html`，版本圖則由固定底圖與數字組成。若重設圖片設計，請使用新的檔名後綴並同步修改產生器、版型及測試，避免沿用舊圖片快取。
 
 既有網址若已被 Facebook 快取，部署後至 [Meta 分享偵錯工具](https://developers.facebook.com/tools/debug/) 輸入完整網址，點「再次抓取」，以工具中的連結預覽確認圖片。網頁 HTTP 200 只代表公開可讀，不能單獨證明 Facebook 快取已更新。
