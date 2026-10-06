@@ -1,0 +1,61 @@
+.home-page { --display: "Songti TC", "Noto Serif TC", "PMingLiU", serif; }
+.home-page .nav-download { color: var(--green); font-weight: 750; }
+.download-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 70px; padding-block: 54px 66px; }
+.download-copy { padding-block: 12px; }
+.download-copy .eyebrow { font-size: 11px; letter-spacing: .16em; margin-bottom: 23px; }
+.download-copy h1 { font-family: var(--display); font-size: clamp(42px, 4.7vw, 63px); font-weight: 600; line-height: 1.45; letter-spacing: .025em; margin-bottom: 25px; }
+.download-intro { font-size: 17px; color: var(--muted); line-height: 2; max-width: 470px; margin-bottom: 29px; }
+.download-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 27px; }
+.store-download { display: inline-flex; align-items: center; gap: 17px; min-height: 76px; padding: 14px 22px; border-radius: 14px; background: var(--ink); color: var(--white); text-decoration: none; box-shadow: 0 6px 15px #193f3210; }
+.store-download:hover { background: var(--green); }
+.store-download:focus-visible { outline-offset: 6px; }
+.store-download > span:not(.store-arrow) { display: flex; flex-direction: column; }
+.store-kicker { font-size: 11px; line-height: 1.4; letter-spacing: .08em; color: #e5edc3; }
+.store-name { font-size: 20px; line-height: 1.5; font-weight: 600; letter-spacing: .01em; }
+.store-arrow { font-size: 23px; margin-left: 6px; }
+.download-secondary { font-size: 14px; font-weight: 600; }
+.download-availability { font-size: 12px; line-height: 1.8; color: var(--muted); margin: 17px 0 27px; }
+.download-features { display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 22px 0 0; border-top: 1px solid var(--line); margin: 0; list-style: none; font-size: 13px; color: var(--green); }
+.download-features li::before { content: ""; display: inline-block; width: 5px; height: 5px; background: #87a480; border-radius: 50%; margin: 0 9px 2px 0; }
+.app-preview { position: relative; isolation: isolate; overflow: hidden; min-width: 0; height: 575px; margin: 0; border-radius: 160px 160px 22px 22px; background: #e7ecda; padding: 25px 22px 0; display: flex; align-items: center; flex-direction: column; }
+.preview-orbit { width: 500px; height: 500px; position: absolute; border: 1px solid #a2b89955; border-radius: 50%; left: calc(50% - 250px); top: 55px; z-index: -1; }
+.preview-orbit::after { content: ""; position: absolute; inset: 36px; border: 1px solid #a2b89955; border-radius: 50%; }
+.preview-brand { display: flex; gap: 11px; align-items: center; margin: 0 0 17px; }
+.preview-brand img { border-radius: 10px; }
+.preview-brand div { font-size: 19px; line-height: 1.25; font-weight: 650; }
+.preview-brand span { display: block; font-size: 10px; letter-spacing: .1em; margin-top: 4px; font-weight: 500; }
+.phone-preview { width: 245px; flex-shrink: 0; padding: 6px; border: 1px solid #647164; background: #25382b; border-radius: 35px; box-shadow: 0 24px 40px #25382b26; }
+.phone-preview img { display: block; width: 100%; height: auto; border-radius: 28px; }
+.app-preview figcaption { position: absolute; bottom: 0; inset-inline: 0; background: linear-gradient(transparent, #e7ecda 28%); padding: 39px 12px 18px; text-align: center; font-size: 15px; font-family: var(--display); letter-spacing: .06em; }
+.app-preview figcaption span { display: block; font-size: 10px; font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif; color: var(--muted); margin-top: 3px; letter-spacing: .05em; }
+.home-support { display: grid; grid-template-columns: 1.1fr 1fr; gap: 65px; align-items: center; padding-bottom: 60px; }
+.home-support h2 { font-family: var(--display); font-size: clamp(29px, 3vw, 40px); font-weight: 600; line-height: 1.6; letter-spacing: .025em; margin-bottom: 18px; }
+.home-support > div > p:not(.eyebrow) { font-size: 16px; color: var(--muted); line-height: 1.9; }
+#contact { scroll-margin-top: 24px; }
+@media (max-width: 960px) {
+  .download-hero { gap: 30px; padding-top: 40px; }
+  .app-preview { height: 550px; border-radius: 130px 130px 20px 20px; padding-top: 23px; }
+  .phone-preview { width: 228px; }
+  .download-intro { font-size: 16px; }
+  .download-actions { gap: 18px; }
+  .home-support { gap: 30px; }
+}
+@media (max-width: 700px) {
+  .home-page .header nav { gap: 10px; font-size: 13px; }
+  .download-hero { grid-template-columns: 1fr; gap: 31px; padding: 32px 0 34px; }
+  .download-copy { padding: 0; }
+  .download-copy .eyebrow { font-size: 10px; margin-bottom: 18px; }
+  .download-copy h1 { font-size: clamp(36px, 10.3vw, 51px); margin-bottom: 19px; }
+  .download-intro { margin-bottom: 24px; }
+  .download-actions { gap: 18px 22px; }
+  .store-download { padding: 13px 18px; gap: 13px; min-height: 71px; }
+  .store-name { font-size: 19px; }
+  .download-availability { margin: 14px 0 23px; font-size: 11px; }
+  .download-features { gap: 10px 17px; padding-top: 18px; font-size: 12px; }
+  .app-preview { height: 526px; border-radius: 120px 120px 20px 20px; padding-top: 24px; }
+  .phone-preview { width: 222px; border-radius: 32px; }
+  .phone-preview img { border-radius: 25px; }
+  .preview-brand { margin-bottom: 15px; }
+  .app-preview figcaption { padding-top: 30px; }
+  .home-support { grid-template-columns: 1fr; gap: 17px; padding-bottom: 35px; }
+}

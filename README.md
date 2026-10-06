@@ -17,7 +17,8 @@
 - `scripts/build_updates.py`：產生靜態頁面與 RSS。
 - `scripts/sync_app_store.py`：從台灣 App Store 讀取新版本。
 - `tests/`：驗證資料、HTML 跳脫、網址安全、版本排序、同步與建置流程。
-- `index.html`、`privacy.html`、`styles.css`、`assets/`：既有支援網站。
+- `index.html`、`home.css`、`assets/app-overview.png`：首頁 App 介紹、示範畫面與 App Store 下載入口。
+- `privacy.html`、`styles.css`、`assets/app-icon.png`：共用品牌與支援內容。
 
 初始內容：1.1.0 使用 2026-10-05 台灣 App Store 公開的八項更新；1.0.0 是首版功能概覽，依既有產品說明整理，首次上架日期為 2026-10-02，不宣稱為歷史 App Store 原文。不要從內部測試 build、未發布開發紀錄推測正式版功能。
 

@@ -4,34 +4,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#215c49">
-  <meta name="description" content="電程 ChargePath 官方支援：充電記帳、停車計時、共同管理、Siri、小工具與 Pro 訂閱的常見問題，以及開發者聯絡方式。">
-  <title>電程 ChargePath｜支援與常見問題</title>
+  <meta name="description" content="電程 ChargePath，專為電動車生活打造的記帳 App。輕鬆記錄充電與用車花費，前往 App Store 下載，讓每一段路都心裡有數。">
+  <title>電程 ChargePath｜電動車生活的隨身帳本</title>
+  <meta property="og:title" content="電程 ChargePath｜電動車生活的隨身帳本">
+  <meta property="og:description" content="記錄充電與用車花費，讓每一段路，都心裡有數。立即前往 App Store 下載。">
+  <meta property="og:image" content="https://amonstudioapp.github.io/chargepath-support/assets/app-icon.png">
+  <meta property="og:url" content="https://amonstudioapp.github.io/chargepath-support/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://amonstudioapp.github.io/chargepath-support/">
   <link rel="icon" href="assets/app-icon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="updates.css">
+  <link rel="stylesheet" href="home.css">
 </head>
-<body>
+<body class="home-page">
   <a class="skip" href="#main">跳至主要內容</a>
   <header class="header wrap">
     <a class="brand" href="./" aria-label="電程 ChargePath 支援首頁"><img src="assets/app-icon.png" width="44" height="44" alt=""><span>電程 <span class="wordmark">ChargePath</span></span></a>
-    <nav aria-label="主要導覽"><a href="updates/">版本更新</a><a href="#faq">常見問題</a><a href="privacy.html">隱私權</a><a href="#contact">聯絡我們</a></nav>
+    <nav aria-label="主要導覽"><a href="updates/">版本更新</a><a href="#faq">常見問題</a><a href="#contact">聯絡我們</a><a class="nav-download" href="https://apps.apple.com/tw/app/id6809342215" aria-label="在 App Store 下載電程">下載 App <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">CHARGEPATH SUPPORT · 電程支援</p>
-        <h1 id="hero-title">用車路上，<br>有問題就找我們。</h1>
-        <p class="intro">從第一筆充電，到每天的停車與用車花費。<br class="desktop-break">操作上有疑問，或有想分享的建議，都歡迎來信。</p>
-        <a class="button" href="#faq">查看常見問題 <span aria-hidden="true">↓</span></a>
+    <section class="download-hero wrap" id="download" aria-labelledby="hero-title">
+      <div class="download-copy">
+        <p class="eyebrow">YOUR EVERYDAY EV COMPANION</p>
+        <h1 id="hero-title">讓每一段路，<br>都心裡有數。</h1>
+        <p class="download-intro">電程 ChargePath 是一款專為電動車生活打造的記帳 App，讓充電與用車花費的紀錄變得簡單直覺，陪你輕鬆掌握日常開銷。</p>
+        <div class="download-actions">
+          <a class="store-download" href="https://apps.apple.com/tw/app/id6809342215" aria-label="在 App Store 下載電程 ChargePath">
+            <svg width="24" height="30" viewBox="0 0 24 30" fill="none" aria-hidden="true"><rect x="3" y="1" width="18" height="28" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M9 5h6M10 25h4M12 10v9m-4-4 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><span class="store-kicker">立即下載電程</span><span class="store-name">前往 App Store</span></span><span class="store-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="download-secondary" href="updates/">看看最新功能 <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="download-availability">專為 iPhone 設計 · 免費下載，提供 App 內購買</p>
+        <ul class="download-features" aria-label="主要功能"><li>充電記帳</li><li>用車花費</li><li>每公里成本</li></ul>
       </div>
-      <aside class="contact-card" id="contact" aria-labelledby="contact-title">
-        <span class="small-label">直接聯絡開發者</span>
-        <h2 id="contact-title">我們可以怎麼幫你？</h2>
-        <p>操作疑問、問題回報、功能建議，<br>都可以寄到這個信箱。</p>
-        <a class="email" href="mailto:amonstudioapp@gmail.com">amonstudioapp@gmail.com</a>
-        <a class="button light" href="mailto:amonstudioapp@gmail.com?subject=%E9%9B%BB%E7%A8%8B%20ChargePath%EF%BD%9C%E6%94%AF%E6%8F%B4%E8%AB%8B%E6%B1%82">撰寫支援郵件 <span aria-hidden="true">↗</span></a>
-        <p class="contact-note">沒有設定郵件 App？複製上方信箱，使用你慣用的郵件服務寄出即可。</p>
-      </aside>
+      <figure class="app-preview">
+        <div class="preview-orbit" aria-hidden="true"></div>
+        <div class="preview-brand"><img src="assets/app-icon.png" width="42" height="42" alt=""><div>電程<span>ChargePath</span></div></div>
+        <div class="phone-preview"><img src="assets/app-overview.png" width="1206" height="2622" alt="電程 App 總覽：本月支出、充電量與預算集中顯示，畫面使用示範資料。" fetchpriority="high"></div>
+        <figcaption>用車日常，一眼掌握。<span>App 畫面示意</span></figcaption>
+      </figure>
     </section>
     <section class="topic-strip wrap" aria-label="快速尋找支援主題">
       <a href="#getting-started"><span>01</span> 開始記帳</a>
@@ -74,6 +87,17 @@
           <details><summary>如何取消訂閱？到期後紀錄會消失嗎？</summary><div class="answer"><p>Pro 為自動續訂訂閱。可到 iPhone「設定 → Apple 帳號 → 訂閱項目」管理，或使用下方連結。取消續訂後，在剩餘有效期間仍可使用 Pro。</p><p>訂閱到期不會刪除本機帳本，既有資料仍可查看、匯出與還原；多車新增紀錄及其他 Pro 功能會暫停。</p><p><a href="https://apps.apple.com/account/subscriptions">管理 Apple 訂閱 ↗</a> · <a href="https://reportaproblem.apple.com/">向 Apple 提出退款申請 ↗</a></p><p>退款由 Apple 審核與處理。</p></div></details>
         </section>
       </div>
+    </section>
+    <section class="home-support wrap" aria-labelledby="support-title">
+      <div><p class="eyebrow">WE’RE HERE TO HELP</p><h2 id="support-title">用車路上，<br>有問題就找我們。</h2><p>從第一筆充電，到每天的停車與用車花費。<br class="desktop-break">操作上有疑問，或有想分享的建議，都歡迎來信。</p></div>
+      <aside class="contact-card" id="contact" aria-labelledby="contact-title">
+        <span class="small-label">直接聯絡開發者</span>
+        <h2 id="contact-title">我們可以怎麼幫你？</h2>
+        <p>操作疑問、問題回報、功能建議，<br>都可以寄到這個信箱。</p>
+        <a class="email" href="mailto:amonstudioapp@gmail.com">amonstudioapp@gmail.com</a>
+        <a class="button light" href="mailto:amonstudioapp@gmail.com?subject=%E9%9B%BB%E7%A8%8B%20ChargePath%EF%BD%9C%E6%94%AF%E6%8F%B4%E8%AB%8B%E6%B1%82">撰寫支援郵件 <span aria-hidden="true">↗</span></a>
+        <p class="contact-note">沒有設定郵件 App？複製上方信箱，使用你慣用的郵件服務寄出即可。</p>
+      </aside>
     </section>
     <section class="report wrap" id="report" aria-labelledby="report-title">
       <div><p class="eyebrow">LET’S SORT IT OUT</p><h2 id="report-title">多一點資訊，<br>更容易找到原因。</h2><p>來信時提供以下資訊，能幫助我們了解狀況。</p></div>
