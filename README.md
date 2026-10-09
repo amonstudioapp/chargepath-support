@@ -2,9 +2,9 @@
 
 GitHub Pages 靜態網站。Python 3.10 以上可建置；Pillow 用於產生版本分享圖，線上瀏覽不需要 JavaScript。
 
-- [支援中心](https://amonstudioapp.github.io/chargepath-support/)
-- [版本更新總覽](https://amonstudioapp.github.io/chargepath-support/updates/)
-- [隱私權政策](https://amonstudioapp.github.io/chargepath-support/privacy.html)
+- [支援中心](https://dency.app/)
+- [版本更新總覽](https://dency.app/updates/)
+- [隱私權政策](https://dency.app/privacy.html)
 - [網站儲存庫](https://github.com/amonstudioapp/chargepath-support)
 
 ## 版本更新怎麼呈現
@@ -80,7 +80,9 @@ Settings → Pages → Source 使用 **GitHub Actions**。`.github/workflows/pag
 
 本儲存庫的遠端內容是網站發布來源；App 專案中的 `docs/support-site` 為本機副本。修改前先取得遠端最新內容，避免覆蓋自動同步的新版本。
 
-App Store Connect 的 Support URL 與 Privacy Policy URL 維持原網址。支援信箱：amonstudioapp@gmail.com。聯絡連結開啟使用者郵件程式，不會自動寄信。
+官方網址為 `https://dency.app/`。在 Settings → Pages → Custom domain 設定 `dency.app`，並啟用 HTTPS。DNS 由 Cloudflare 管理：`@`（根網域）與 `www` 均使用僅 DNS（DNS only）的 CNAME 指向 `amonstudioapp.github.io`；根網域透過 Cloudflare CNAME flattening 解析。此站使用自訂 GitHub Actions workflow，依 [GitHub 官方說明](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages)，不需要 `CNAME` 檔案。
+
+App Store Connect 的 Support URL 建議設為 `https://dency.app/`，Privacy Policy URL 建議設為 `https://dency.app/privacy.html`；這些後台欄位需另行更新，網站部署不會自動變更。支援信箱：amonstudioapp@gmail.com。聯絡連結開啟使用者郵件程式，不會自動寄信。
 
 ## Facebook 與社群分享縮圖
 
